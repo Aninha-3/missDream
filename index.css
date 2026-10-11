@@ -1,0 +1,591 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FBF9F5;
+    color: #3D0C11;
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/* NAVBAR */
+
+.cabecalho {
+    width: 100%;
+    background-color: #FBF9F5;
+    border-bottom: 1px solid #EDE5DC;
+}
+
+.navegacao {
+    width: 100%;
+    max-width: 1250px;
+    min-height: 85px;
+    margin: auto;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.logo span,
+.logo-rodape span {
+    color: #C5A059;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    list-style: none;
+}
+
+.menu a {
+    position: relative;
+    padding: 8px 0;
+    color: #655653;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: #572121;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #C5A059;
+    transition: width 0.3s ease;
+}
+
+.menu a:hover::after,
+.menu a.ativo::after {
+    width: 100%;
+}
+
+
+/* BANNER PRINCIPAL */
+
+.banner {
+    position: relative;
+    min-height: 620px;
+    height: min(75vw, 760px);
+    max-height: 760px;
+    overflow: hidden;
+    background-color: #3D0C11;
+    color: #FBF9F5;
+}
+
+.banner-imagem {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    animation: ampliar 1.5s ease both;
+}
+
+.banner-sombra {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(28, 8, 10, 0.88) 0%,
+            rgba(28, 8, 10, 0.65) 42%,
+            rgba(28, 8, 10, 0.10) 100%
+        );
+}
+
+.banner-conteudo {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1250px;
+    height: 100%;
+    min-height: 620px;
+    margin: auto;
+    padding: 90px 65px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.banner-etiqueta {
+    margin-bottom: 28px;
+    color: #E0C18B;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.banner h1 {
+    max-width: 750px;
+    margin-bottom: 25px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.banner h1 em {
+    color: #D6B77F;
+    font-weight: 400;
+}
+
+.banner-texto {
+    max-width: 450px;
+    margin-bottom: 35px;
+
+    color: #E9DFD9;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.botao-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 17px 23px;
+    border: 1px solid #D6B77F;
+
+    color: #FBF9F5;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.botao-banner span {
+    color: #D6B77F;
+    font-size: 17px;
+}
+
+.botao-banner:hover {
+    background-color: #D6B77F;
+    color: #3D0C11;
+}
+
+.botao-banner:hover span {
+    color: #3D0C11;
+}
+
+.banner-numero {
+    position: absolute;
+    right: 35px;
+    bottom: 30px;
+
+    color: #F5EDE3;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+/* SOBRE */
+
+.sobre {
+    max-width: 1150px;
+    margin: auto;
+    padding: 110px 45px;
+}
+
+.sobre-detalhe {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 55px;
+
+    color: #96794F;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.sobre-detalhe span:first-child {
+    color: #572121;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+
+.linha {
+    width: 45px;
+    height: 1px;
+    background-color: #C5A059;
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.etiqueta {
+    margin-bottom: 20px;
+    color: #9A7952;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.sobre h2,
+.estilistas h2,
+.contato h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.sobre h2 em,
+.estilistas h2 em,
+.contato h2 em {
+    color: #956C45;
+    font-weight: 400;
+}
+
+.sobre-texto {
+    padding-top: 5px;
+}
+
+.sobre-texto p {
+    margin-bottom: 20px;
+    color: #756A67;
+    font-size: 13px;
+    line-height: 2.1;
+}
+
+.link-simples {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #C5A059;
+    color: #572121;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.link-simples span {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.link-simples:hover span {
+    transform: translateX(5px);
+}
+
+
+/* ESTILISTAS */
+
+.estilistas {
+    padding: 100px 45px 110px;
+    background-color: #F1EBE3;
+}
+
+.estilistas-cabecalho {
+    max-width: 1150px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.estilistas-cabecalho h2 {
+    margin-bottom: 20px;
+}
+
+.estilistas-cabecalho > p:last-child {
+    color: #756A67;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.estilistas-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.estilista {
+    min-width: 0;
+}
+
+.estilista-imagem {
+    position: relative;
+    height: 390px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    background-color: #E4D8CA;
+}
+
+.estilista-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transition: transform 0.6s ease;
+}
+
+.estilista-numero {
+    position: absolute;
+    right: 18px;
+    bottom: 15px;
+
+    color: #FBF9F5;
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.estilista-info {
+    padding: 0 5px;
+}
+
+.estilista-cargo {
+    margin-bottom: 12px;
+    color: #96794F;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.estilista-info h3 {
+    margin-bottom: 15px;
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.estilistas-frase {
+    max-width: 650px;
+    margin: 75px auto;
+    color: #572121;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-style: italic;
+    line-height: 1.7;
+    text-align: center;
+}
+
+
+/* CONTATO */
+
+.contato {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 60px;
+
+    padding: 100px max(45px, calc((100% - 1100px) / 2));
+
+    background-color: #572121;
+    color: #FBF9F5;
+}
+
+.contato-conteudo {
+    max-width: 560px;
+}
+
+.contato .etiqueta {
+    color: #D6B77F;
+}
+
+.contato h2 {
+    margin-bottom: 25px;
+}
+
+.contato h2 em {
+    color: #D6B77F;
+}
+
+.contato-conteudo > p:not(.etiqueta) {
+    max-width: 460px;
+    margin-bottom: 30px;
+    color: #E9DFD9;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.botao-contato {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 16px 22px;
+    border: 1px solid #D6B77F;
+
+    color: #FBF9F5;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botao-contato span {
+    color: #D6B77F;
+    font-size: 17px;
+}
+
+.botao-contato:hover {
+    background-color: #D6B77F;
+    color: #3D0C11;
+}
+
+.botao-contato:hover span {
+    color: #3D0C11;
+}
+
+.contato-lateral {
+    padding: 35px 0 35px 35px;
+    border-left: 1px solid rgba(214, 183, 127, 0.55);
+}
+
+.contato-simbolo {
+    display: block;
+    margin-bottom: 25px;
+
+    color: #D6B77F;
+    font-family: "Playfair Display", serif;
+    font-size: 100px;
+    line-height: 1;
+}
+
+.contato-lateral p {
+    margin-top: 12px;
+    color: #E9DFD9;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+/* FOOTER */
+
+.rodape {
+    padding: 65px 45px 0;
+    background-color: #FBF9F5;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 70px;
+
+    max-width: 1150px;
+    margin: auto;
+    padding-bottom: 55px;
+}
+
+.logo-rodape {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.rodape-marca > p {
+    max-width: 320px;
+    margin-top: 18px;
+    color: #756A67;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.rodape-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.rodape-links h3 {
+    margin-bottom: 5px;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.rodape-links a {
+    color: #756A67;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.rodape-links a:hover {
+    color: #956C45;
+}
+
+.rodape-final {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    max-width: 1250px;
+    margin: auto;
+    padding: 22px 0;
+
+    border-top: 1px solid #E6DDD3;
+}
+
+.rodape-final p {
+    color: #8A7D77;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+
+/* ANIMAÇÃO DO BANNER */
+
+@keyframes ampliar {
+    from {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
